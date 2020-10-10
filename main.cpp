@@ -16,6 +16,16 @@
 #include "main.h"
 
 int main(){
+    Rectangle rec1, rec2;
+    Rectangle lit_rec = "1,1,2,2"_rec;
+
+    //rec1.set_sides(); rec2.set_sides();
+    std::cout << lit_rec.get_width() << " " << lit_rec.get_height() << std::endl;
+    std::cout << lit_rec.get_perimeter() << std::endl;
+    lit_rec++;
+    std::cout << lit_rec.get_perimeter() << std::endl;
+
+    std::cout << lit_rec.get_width() << " " << lit_rec.get_height() << std::endl;
 
     return 0;
 }
