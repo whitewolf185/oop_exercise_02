@@ -212,7 +212,7 @@ public:
 
 //----------------end of class--------------------------
 
-Rectangle operator"" _rec(const char *str, size_t n){
+  Rectangle operator"" _rec(const char *str, size_t n){
     double xy[4];
 
     std::string s(str);
@@ -220,11 +220,7 @@ Rectangle operator"" _rec(const char *str, size_t n){
     short count = 0; double last = 0;
     for (int i = 0; i <= n; ++i) {
         if(s[i] == ',' && count < 5){
-            try {
-                xy[count] = std::stod(s.substr(last, i - last + 1));
-            } catch (std::invalid_argument) {
-                std::cout << "you do something wrong\n";
-            }
+            xy[count] = std::stod(s.substr(last, i - last + 1));
             last = i + 1;
             ++count;
         }
