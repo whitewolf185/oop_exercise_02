@@ -150,9 +150,8 @@ public:
 
         BigBro.p2.y = fmax(a.p2.y,p2.y);
         BigBro.p1.y = fmin(a.p1.y,p1.y);
-        BigBro.p1.x = fmax(fmax(p1.x,p2.x),fmax(a.p1.x,a.p2.x));
-        BigBro.p2.x = fmin(fmin(p1.x,p2.x),fmin(a.p1.x,a.p2.x));
-
+        BigBro.p1.x = fmin(fmax(p1.x,p2.x),fmin(a.p1.x,a.p2.x));
+        BigBro.p2.x = fmax(fmin(p1.x,p2.x),fmax(a.p1.x,a.p2.x));
         BigBro.is_seg = false;
 
         return BigBro;
