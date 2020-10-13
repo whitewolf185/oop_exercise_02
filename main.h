@@ -129,32 +129,32 @@ public:
         std::cout << "width is " << this->get_width() << " height is " << this->get_height() << std::endl;
     }
 
-    Rectangle Lil_Rect(Rectangle a){
+    Rectangle Lil_Rect(Rectangle tmp_rec){
         Rectangle LilBro;
 
-        if( (p1.y > a.p2.y) || (a.p1.y > p2.y) ||
-        (p1.y> a.p2.x) || (a.p1.x < p2.y))
+        if((p1.y > tmp_rec.p2.y) || (tmp_rec.p1.y > p2.y) ||
+           (p1.x > tmp_rec.p2.x) || (tmp_rec.p1.x < p2.x))
         {
             return LilBro;
         }
 
-        LilBro.p1.y = fmax(a.p1.y,p1.y);
-        LilBro.p2.x = fmin(a.p2.x,p2.x);
-        LilBro.p1.y = fmax(a.p1.y,p1.y);
-        LilBro.p2.y = fmin(a.p2.y,p2.y);
+        LilBro.p1.y = fmax(tmp_rec.p1.y, p1.y);
+        LilBro.p2.x = fmin(tmp_rec.p2.x, p2.x);
+        LilBro.p1.y = fmax(tmp_rec.p1.y, p1.y);
+        LilBro.p2.y = fmin(tmp_rec.p2.y, p2.y);
 
         LilBro.is_seg = get_area() == 0;;
 
         return LilBro;
     };
 
-    Rectangle Big_Rect(Rectangle a){
+    Rectangle Big_Rect(Rectangle tmp_rec){
         Rectangle BigBro;
 
-        BigBro.p2.y = fmax(a.p2.y,p2.y);
-        BigBro.p1.y = fmin(a.p1.y,p1.y);
-        BigBro.p1.x = fmin(fmax(p1.x,p2.x),fmin(a.p1.x,a.p2.x));
-        BigBro.p2.x = fmax(fmin(p1.x,p2.x),fmax(a.p1.x,a.p2.x));
+        BigBro.p2.y = fmax(tmp_rec.p2.y, p2.y);
+        BigBro.p1.y = fmin(tmp_rec.p1.y, p1.y);
+        BigBro.p1.x = fmin(fmax(p1.x,p2.x),fmin(tmp_rec.p1.x, tmp_rec.p2.x));
+        BigBro.p2.x = fmax(fmin(p1.x,p2.x),fmax(tmp_rec.p1.x, tmp_rec.p2.x));
         BigBro.is_seg = get_area() == 0;
 
         return BigBro;
@@ -219,6 +219,14 @@ public:
     void show_coordinates() const {
         std::cout << "Point 1 is " << p1.x << ' ' << p1.y << '\n' <<
                     "Point 2 is " << p2.x << ' ' << p2.y << std::endl;
+    }
+
+    void show_perimeter() const {
+        std::cout << "perimeter is " << this->get_perimeter() << std::endl;
+    }
+
+    void show_area() const {
+        std::cout << "area is " << this->get_area() << std::endl;
     }
 };
 

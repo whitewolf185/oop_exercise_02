@@ -1,0 +1,39 @@
+You entered wrong arguments!
+The obj will be empty
+width is 0 height is 0
+perimeter is 0
+width is 1 height is 1
+perimeter is 4
+Enter your points.
+The First one is left-down edge. The Second one is right-up edge.
+
+0 0
+0 0
+Enter your points.
+The First one is left-down edge. The Second one is right-up edge.
+
+0 0 0 0
+Perimeter difference is 0
+rec1 and rec2 have equal area
+lit_rec
+width is 1 height is 1
+perimeter is 4
+perimeter is 8
+width is 2 height is 2
+lit_rec shifting
+Point 1 is 3 1
+Point 2 is 5 3
+Point 1 is 3 0
+Point 2 is 5 2
+
+merging
+Point 1 is 0 0
+Point 2 is 3 2
+width is 3 height is 2
+
+separation
+Point 1 is 0 0
+Point 2 is 0 0
+width is 0 height is 0
+
+Process finished with exit code 0
